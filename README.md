@@ -11,7 +11,7 @@ Younger customers tend to subscribe more frequently, especially those in their 3
 
 How Do Subscription Rates Vary Across Job Types?
 ![SubRateJobType](https://github.com/user-attachments/assets/0d8beee9-4b8c-4b33-9a10-c7834c26eb0e)
-Customers in blue-collar jobs, such as manual workers and technicians, show a higher subscription rate. This suggests that the bank's marketing campaigns are resonating more with working professionals.
+Customers in blue-collar jobs, such as manual workers and technicians, show a lower subscription rate. This suggests that the bank's marketing campaigns are resonating more with working professionals.
 
 Which Contact Methods Yield the Highest Subscription Rates?
 ![effectivenessContactMethod](https://github.com/user-attachments/assets/d3d077f6-40df-46a9-bf6c-af741b446fba)
