@@ -1,68 +1,129 @@
-
-# Define the folder path containing your CSV files
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
+import numpy as np
 
-# Load dataset
-df = pd.read_csv(r'C:\Users\Olajumoke\Desktop\CMTECH\python\bank-additional-full.csv', sep=";")  # Ensure correct delimiter
-# Age distribution of customers who subscribed vs. those who didn’t.
+class BankMarketingVisualization:
+    def __init__(self, data_path, save_folder="images"):
+        """
+        Initialize the class with the dataset path and the folder where images will be saved.
+        :param data_path: Path to the CSV dataset
+        :param save_folder: Folder to save generated images
+        """
+        # Load the dataset
+        self.df = pd.read_csv(data_path, sep=";")
+        # Create a folder to store images
+        self.save_folder = save_folder
+        os.makedirs(self.save_folder, exist_ok=True)
 
-plt.figure(figsize=(10, 5))
-sns.histplot(data=df, x='age', hue='y', multiple='stack', palette='coolwarm')
-plt.title("Age Distribution of Customers Who Subscribed vs. Did Not Subscribe")
-plt.xlabel("Age")
-plt.ylabel("Count")
-plt.legend(title="Subscribed", labels=["No", "Yes"])
-plt.show()
+    def save_plot(self, plot_name):
+        """
+        Save the current plot to the specified folder.
+        :param plot_name: Name of the plot to save
+        """
+        plt.savefig(os.path.join(self.save_folder, plot_name))
+        plt.show()
 
-# Subscription rates by job type.
-plt.figure(figsize=(12, 5))
-sns.countplot(data=df, x='job', hue='y', palette='Set2')
-plt.title("Subscription Rate by Job Type")
-plt.xlabel("Job Category")
-plt.ylabel("Count")
-plt.xticks(rotation=45)
-plt.legend(title="Subscribed", labels=["No", "Yes"])
-plt.show()
+    def age_distribution(self):
+        """
+        Plot the age distribution of customers who subscribed vs. those who didn’t.
+        """
+        plt.figure(figsize=(10, 5))
+        sns.histplot(data=self.df, x='age', hue='y', multiple='stack', palette='coolwarm')
+        plt.title("Age Distribution of Customers Who Subscribed vs. Did Not Subscribe")
+        plt.xlabel("Age")
+        plt.ylabel("Count")
+        plt.legend(title="Subscribed", labels=["No", "Yes"])
+        self.save_plot("age_distribution.png")
 
-#Subscription rate by contact method (phone, cellular, etc.).
-plt.figure(figsize=(8, 5))
-sns.countplot(data=df, x='contact', hue='y', palette='viridis')
-plt.title("Effectiveness of Contact Methods")
-plt.xlabel("Contact Method")
-plt.ylabel("Number of Customers")
-plt.legend(title="Subscribed", labels=["No", "Yes"])
-plt.show()
+    def subscription_by_job(self):
+        """
+        Plot subscription rates by job type.
+        """
+        plt.figure(figsize=(12, 5))
+        sns.countplot(data=self.df, x='job', hue='y', palette='Set2')
+        plt.title("Subscription Rate by Job Type")
+        plt.xlabel("Job Category")
+        plt.ylabel("Count")
+        plt.xticks(rotation=45)
+        plt.legend(title="Subscribed", labels=["No", "Yes"])
+        self.save_plot("subscription_by_job.png")
 
-# Success rates based on previous campaign contact history.
-plt.figure(figsize=(8, 5))
-sns.countplot(data=df, x='poutcome', hue='y', palette='magma')
-plt.title("Subscription Rate by Outcome of Previous Campaign")
-plt.xlabel("Previous Campaign Outcome")
-plt.ylabel("Number of Customers")
-plt.legend(title="Subscribed", labels=["No", "Yes"])
-plt.show()
+    def subscription_by_contact(self):
+        """
+        Plot subscription rates by contact method (phone, cellular, etc.).
+        """
+        plt.figure(figsize=(8, 5))
+        sns.countplot(data=self.df, x='contact', hue='y', palette='viridis')
+        plt.title("Effectiveness of Contact Methods")
+        plt.xlabel("Contact Method")
+        plt.ylabel("Number of Customers")
+        plt.legend(title="Subscribed", labels=["No", "Yes"])
+        self.save_plot("subscription_by_contact.png")
 
-# Subscription rate by call duration.
-plt.figure(figsize=(8, 5))
-sns.boxplot(data=df, x='y', y='duration', palette='coolwarm')
-plt.title("Call Duration vs Subscription")
-plt.xlabel("Subscribed")
-plt.ylabel("Call Duration (seconds)")
-plt.show()
+    def subscription_by_poutcome(self):
+        """
+        Plot subscription rates based on previous campaign outcomes.
+        """
+        plt.figure(figsize=(8, 5))
+        sns.countplot(data=self.df, x='poutcome', hue='y', palette='magma')
+        plt.title("Subscription Rate by Outcome of Previous Campaign")
+        plt.xlabel("Previous Campaign Outcome")
+        plt.ylabel("Number of Customers")
+        plt.legend(title="Subscribed", labels=["No", "Yes"])
+        self.save_plot("subscription_by_poutcome.png")
 
-#  Subscription rates by marital status.
-plt.figure(figsize=(10, 5))
-sns.countplot(data=df, x='marital', hue='y', palette='coolwarm')
-plt.title("Effect of Marital Status on Subscription Rates")
-plt.xlabel("Marital Status")
-plt.ylabel("Number of Customers")
-plt.legend(title="Subscribed", labels=["No", "Yes"])
-plt.show()
+    def call_duration_vs_subscription(self):
+        """
+        Plot subscription rates based on call duration.
+        """
+        plt.figure(figsize=(8, 5))
+        sns.boxplot(data=self.df, x='y', y='duration', hue='y', dodge=False)
+        plt.title("Call Duration vs Subscription")
+        plt.xlabel("Subscribed")
+        plt.ylabel("Call Duration (seconds)")
+        self.save_plot("call_duration.png")
+
+    def subscription_by_marital(self):
+        """
+        Plot subscription rates by marital status.
+        """
+        plt.figure(figsize=(10, 5))
+        sns.countplot(data=self.df, x='marital', hue='y', palette='coolwarm')
+        plt.title("Effect of Marital Status on Subscription Rates")
+        plt.xlabel("Marital Status")
+        plt.ylabel("Number of Customers")
+        plt.legend(title="Subscribed", labels=["No", "Yes"])
+        self.save_plot("subscription_by_marital.png")
+
+    def kde_age_subscription(self):
+        """
+        Plot a KDE plot of age vs subscription.
+        """
+        plt.figure(figsize=(10, 5))
+        sns.kdeplot(data=self.df, x='age', hue='y', fill=True, palette='coolwarm')
+        plt.title("Age vs Subscription Probability Density")
+        plt.xlabel("Age")
+        plt.ylabel("Density")
+        plt.legend(title="Subscribed", labels=["No", "Yes"])
+        self.save_plot("kde_age_subscription.png")
+
+    def generate_all_plots(self):
+        """
+        Generate and save all the visualizations in sequence.
+        """
+        self.age_distribution()
+        self.subscription_by_job()
+        self.subscription_by_contact()
+        self.subscription_by_poutcome()
+        self.call_duration_vs_subscription()
+        self.subscription_by_marital()
+        self.kde_age_subscription()
 
 
-
-
-
-
+# Example Usage:
+if __name__ == "__main__":
+    data_path = r'C:\Users\Olajumoke\Desktop\CMTECH\python\bank-additional-full.csv'
+    bank_viz = BankMarketingVisualization(data_path)
+    bank_viz.generate_all_plots()  # This will generate all the plots and save them in the "images" folder.
