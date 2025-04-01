@@ -10,8 +10,8 @@ What is the Age Distribution of Customers Who Subscribed vs. Those Who Didn’t?
 Younger customers tend to subscribe more frequently, especially those in their 30s and 40s, indicating that marketing efforts should be targeted at this age range.
 
 How Do Subscription Rates Vary Across Job Types?
-![SubRateJobType](https://github.com/user-attachments/assets/0d8beee9-4b8c-4b33-9a10-c7834c26eb0e)
-Customers in blue-collar jobs, such as manual workers and technicians, show a lower subscription rate. This suggests that the bank's marketing campaigns are resonating more with working professionals.
+![SubRateByJob_USE](https://github.com/user-attachments/assets/a34d68e6-9832-48ef-a951-c691e91816b1)
+Customers in blue-collar jobs, admin and technicians, show a higher subscription rate. This suggests that the bank's marketing campaigns are resonating more with working professionals.
 
 Which Contact Methods Yield the Highest Subscription Rates?
 ![effectivenessContactMethod](https://github.com/user-attachments/assets/d3d077f6-40df-46a9-bf6c-af741b446fba)
