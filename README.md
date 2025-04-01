@@ -41,4 +41,4 @@ Recommendation
 4. Implement a loyalty program that targets customers who have previously engaged successfully with the bank, increasing the chances of them subscribing again.
 5. Focus on training staff to have longer, more meaningful conversations with customers, which may improve conversion rates.
 6. Tailor marketing campaigns to married couples, highlighting long-term investment benefits such as retirement plans or family savings accounts.
-7. The distribution of age shows that younger customers (below 30) are more likely to subscribe, with a sharp peak around ages 30-40.
+7. Develop specific marketing strategies for younger customers, focusing on products that appeal to early-stage investors or savers.
