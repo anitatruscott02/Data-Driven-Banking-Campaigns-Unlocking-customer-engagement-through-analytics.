@@ -10,6 +10,7 @@ This project analyzes the Bank Marketing Dataset to uncover key customer behavio
 My goal is to analyze the Bank Marketing Dataset to gain a deeper understanding of what influences customers' decisions to subscribe to term deposits. By answering key questions and visualizing data trends, we will help the bank identify the most effective marketing channels, target customer segments, and optimize campaign strategies for better engagement and conversion.
 
 
+
 **LET'S GET STARTED**
 
 **ADDRESSED ISSUES**
