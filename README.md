@@ -1,15 +1,19 @@
 # Data-Driven-Banking-Campaigns-Unlocking-customer-engagement-through-analytics.
 
-**WHAT DOES THIS PROJECT DO?**
+**WHAT DOES THIS PROJECT DO?** 
+
 This project analyzes the Bank Marketing Dataset to uncover key customer behaviors, marketing effectiveness, and factors influencing subscription rates for term deposit products.  Financial institutions invest heavily in marketing campaigns, yet many efforts result in low conversion rates. 
 
 
 **WHY IS THIS PROJECT USEFUL?**
+
 My goal is to analyze the Bank Marketing Dataset to gain a deeper understanding of what influences customers' decisions to subscribe to term deposits. By answering key questions and visualizing data trends, we will help the bank identify the most effective marketing channels, target customer segments, and optimize campaign strategies for better engagement and conversion.
 
 
 **LET'S GET STARTED**
+
 **ADDRESSED ISSUES**
+
 **What is the Age Distribution of Customers Who Subscribed vs. Those Who Didn’t?**
 ![ageDistcustomers](https://github.com/user-attachments/assets/d8b05e57-da22-46ca-bce6-512859527440)
 Younger customers tend to subscribe more frequently, especially those in their 30s and 40s, indicating that marketing efforts should be targeted at this age range.
