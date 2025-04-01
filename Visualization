@@ -1,0 +1,68 @@
+
+# Define the folder path containing your CSV files
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load dataset
+df = pd.read_csv(r'C:\Users\Olajumoke\Desktop\CMTECH\python\bank-additional-full.csv', sep=";")  # Ensure correct delimiter
+# Age distribution of customers who subscribed vs. those who didn’t.
+
+plt.figure(figsize=(10, 5))
+sns.histplot(data=df, x='age', hue='y', multiple='stack', palette='coolwarm')
+plt.title("Age Distribution of Customers Who Subscribed vs. Did Not Subscribe")
+plt.xlabel("Age")
+plt.ylabel("Count")
+plt.legend(title="Subscribed", labels=["No", "Yes"])
+plt.show()
+
+# Subscription rates by job type.
+plt.figure(figsize=(12, 5))
+sns.countplot(data=df, x='job', hue='y', palette='Set2')
+plt.title("Subscription Rate by Job Type")
+plt.xlabel("Job Category")
+plt.ylabel("Count")
+plt.xticks(rotation=45)
+plt.legend(title="Subscribed", labels=["No", "Yes"])
+plt.show()
+
+#Subscription rate by contact method (phone, cellular, etc.).
+plt.figure(figsize=(8, 5))
+sns.countplot(data=df, x='contact', hue='y', palette='viridis')
+plt.title("Effectiveness of Contact Methods")
+plt.xlabel("Contact Method")
+plt.ylabel("Number of Customers")
+plt.legend(title="Subscribed", labels=["No", "Yes"])
+plt.show()
+
+# Success rates based on previous campaign contact history.
+plt.figure(figsize=(8, 5))
+sns.countplot(data=df, x='poutcome', hue='y', palette='magma')
+plt.title("Subscription Rate by Outcome of Previous Campaign")
+plt.xlabel("Previous Campaign Outcome")
+plt.ylabel("Number of Customers")
+plt.legend(title="Subscribed", labels=["No", "Yes"])
+plt.show()
+
+# Subscription rate by call duration.
+plt.figure(figsize=(8, 5))
+sns.boxplot(data=df, x='y', y='duration', palette='coolwarm')
+plt.title("Call Duration vs Subscription")
+plt.xlabel("Subscribed")
+plt.ylabel("Call Duration (seconds)")
+plt.show()
+
+#  Subscription rates by marital status.
+plt.figure(figsize=(10, 5))
+sns.countplot(data=df, x='marital', hue='y', palette='coolwarm')
+plt.title("Effect of Marital Status on Subscription Rates")
+plt.xlabel("Marital Status")
+plt.ylabel("Number of Customers")
+plt.legend(title="Subscribed", labels=["No", "Yes"])
+plt.show()
+
+
+
+
+
+
