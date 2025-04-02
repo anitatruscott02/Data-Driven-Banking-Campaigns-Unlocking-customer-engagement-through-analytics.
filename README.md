@@ -3,6 +3,7 @@
 ## WHAT DOES THIS PROJECT DO?
 
 This project analyzes the Bank Marketing Dataset to uncover key customer behaviors, marketing effectiveness, and factors influencing subscription rates for term deposit products.  Financial institutions invest heavily in marketing campaigns, yet many efforts result in low conversion rates. 
+
 data source - https://www.kaggle.com/datasets/janiobachmann/bank-marketing-dataset 
 
 
